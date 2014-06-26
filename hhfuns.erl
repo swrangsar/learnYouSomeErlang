@@ -22,4 +22,7 @@ incr(X) -> X + 1.
 decr(X) -> X - 1.
 
 
-
+base(A) ->
+    B = A + 1,
+    F = fun() -> A * B end,
+    F().
