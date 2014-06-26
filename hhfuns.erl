@@ -22,7 +22,15 @@ incr(X) -> X + 1.
 decr(X) -> X - 1.
 
 
-base(A) ->
-    B = A + 1,
-    F = fun() -> A * B end,
-    F().
+a() ->
+    Secret = "pony",
+    fun() -> Secret end.
+    
+
+b(F) ->
+    "a/0's password is " ++ F().
+
+
+base() ->
+    A = 1,
+    (fun(A) -> A = 2 end)(2).
