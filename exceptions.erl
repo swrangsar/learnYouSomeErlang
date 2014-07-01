@@ -34,4 +34,3 @@ catcher(X,Y) ->
 
 one_or_two(1) -> return;
 one_or_two(2) -> throw(return).
-
