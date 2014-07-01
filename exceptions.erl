@@ -23,3 +23,15 @@ exits(F) ->
     catch
         exit:Exit -> {exit, caught, Exit}
     end.
+
+
+catcher(X,Y) ->
+    case catch X/Y of
+        {'EXIT', {badarith,_}} -> "uh oh";
+        N -> N
+    end.
+
+
+one_or_two(1) -> return;
+one_or_two(2) -> throw(return).
+
