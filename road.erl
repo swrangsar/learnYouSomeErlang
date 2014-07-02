@@ -21,3 +21,8 @@ group_vals([A,B,X|Rest], Acc) ->
     group_vals(Rest, [{A,B,X} | Acc]).
 
 
+shortest_step({A,B,X}, {{DistA,PathA}, {DistB,PathB}}) ->
+    OptA1 = {DistA + A, [{a,A}|PathA]},
+    OptA2 = {DistB + B + X, [{x,X}, {b,B}|PathB]},
+    OptB1 = {DistB + B, [{b,B|PathB}]},
+    
